@@ -6,7 +6,9 @@ public class EnemyScript : MonoBehaviour
 {
     public Nodes nodeManager;
     public float Speed = 1f;
-    int currentIndex = 0;
+    //int currentIndex = 0;
+    NodeScript currentNode;
+    NodeScript nextNode;
     float currentPercentage = 0f;
 
     public static string Name = "Pedro";
@@ -14,6 +16,11 @@ public class EnemyScript : MonoBehaviour
     private void Start()
     {
         nodeManager = Nodes.Instance;
+        int curInd = Random.Range(0, nodeManager.nodes.Length);
+        currentNode = nodeManager.nodes[curInd];
+
+        int nextNodeInd = Random.Range(0, currentNode.connections.Length);
+        nextNode = currentNode.connections[nextNodeInd];
     }
 
     // Update is called once per frame
@@ -21,8 +28,8 @@ public class EnemyScript : MonoBehaviour
     {
         currentPercentage = currentPercentage + (Speed * Time.deltaTime);
 
-        Vector3 A = nodeManager.nodes[currentIndex].transform.position;
-        Vector3 B = nodeManager.nodes[(currentIndex+1) % nodeManager.nodes.Length].transform.position;
+        Vector3 A = currentNode.transform.position;
+        Vector3 B = nextNode.transform.position;
                
         Vector3 newPos = Vector3.Lerp( A, B, currentPercentage);
 
@@ -31,7 +38,9 @@ public class EnemyScript : MonoBehaviour
         if (currentPercentage >= 1)
         {
             currentPercentage = 0;
-            currentIndex = (currentIndex + 1) % (nodeManager.nodes.Length);
+            currentNode = nextNode;
+            int nextNodeInd = Random.Range(0, currentNode.connections.Length);
+            nextNode = currentNode.connections[nextNodeInd];
         }
     }
 }

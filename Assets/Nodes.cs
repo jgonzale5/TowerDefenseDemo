@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Nodes : MonoBehaviour
 {
-    public GameObject[] nodes;
+    public NodeScript[] nodes;
 
     public static Nodes Instance;
     
     void Start()
     {
         Instance = this;
-        print(EnemySpawner.TellMeAJoke());
     }
 }
