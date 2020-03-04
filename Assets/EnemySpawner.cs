@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public EnemyClassScriptable[] enemyTypes;
     public Transform spawnPoint;
     public float timeBetweenSpawns = 3f;
     public AnimationCurve spawnCurve;
@@ -13,7 +13,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        int number = Random.Range(0, enemyTypes.Length);
+        Instantiate(enemyTypes[number].prefab, spawnPoint.position, Quaternion.identity);
+        timeBetweenSpawns = enemyTypes[number].cooldown;
     }
 
     // Update is called once per frame
@@ -25,7 +27,9 @@ public class EnemySpawner : MonoBehaviour
         if (timePassed > timeBetweenSpawns)
         {
             timePassed = 0;
-            Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+            int number = Random.Range(0, enemyTypes.Length);
+            Instantiate(enemyTypes[number].prefab, spawnPoint.position, Quaternion.identity);
+            timeBetweenSpawns = enemyTypes[number].cooldown;
             enemiesSpawned++;
         }
     }

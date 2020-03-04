@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public abstract class EnemyScript : MonoBehaviour
 {
     public Nodes nodeManager;
     public float Speed = 1f;
@@ -11,10 +11,12 @@ public class EnemyScript : MonoBehaviour
     NodeScript nextNode;
     float currentPercentage = 0f;
 
-    public static string Name = "Pedro";
+    //public static string Name = "Pedro";
 
-    private void Start()
+    public void Start()
     {
+        WhenSpawns();
+        
         nodeManager = Nodes.Instance;
         int curInd = Random.Range(0, nodeManager.nodes.Length);
         currentNode = nodeManager.nodes[curInd];
@@ -22,9 +24,8 @@ public class EnemyScript : MonoBehaviour
         int nextNodeInd = Random.Range(0, currentNode.connections.Length);
         nextNode = currentNode.connections[nextNodeInd];
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void Update()
     {
         currentPercentage = currentPercentage + (Speed * Time.deltaTime);
 
@@ -42,5 +43,12 @@ public class EnemyScript : MonoBehaviour
             int nextNodeInd = Random.Range(0, currentNode.connections.Length);
             nextNode = currentNode.connections[nextNodeInd];
         }
+    }
+
+    public abstract void WhenSpawns();
+
+    private int tellMeSomething()
+    {
+        return 2;
     }
 }

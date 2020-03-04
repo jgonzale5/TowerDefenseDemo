@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4342341071205538881}
   - component: {fileID: 4342341071205538880}
   - component: {fileID: 4342341071205538883}
-  - component: {fileID: 4342341071205538882}
   - component: {fileID: 1959047850595586035}
+  - component: {fileID: 5346615722192463770}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 82db0d361ae622849835df7b338a453e, type: 2}
+  - {fileID: 2100000, guid: 06515e690d67097458d1d361fbe8ded2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,20 +95,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4342341071205538882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4342341071205538941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98726ba96b36ffb42ae168c14817e59f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeManager: {fileID: 0}
-  Speed: 1
 --- !u!108 &1959047850595586035
 Light:
   m_ObjectHideFlags: 0
@@ -119,7 +105,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -169,6 +155,22 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5346615722192463770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342341071205538941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d7c448f29ee947810f6da03dfe5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeManager: {fileID: 0}
+  Speed: 3
+  spawnParticle: {fileID: 5138101300177638091, guid: b66753f9ccc6b9640986d6942dbbfea7,
+    type: 3}
 --- !u!1 &4342341071817257126
 GameObject:
   m_ObjectHideFlags: 0

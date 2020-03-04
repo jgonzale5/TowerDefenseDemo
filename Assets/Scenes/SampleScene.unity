@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 97271444}
   - component: {fileID: 97271446}
   - component: {fileID: 97271445}
+  - component: {fileID: 97271447}
   m_Layer: 5
   m_Name: Clock display
   m_TagString: Untagged
@@ -199,6 +200,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97271443}
   m_CullTransparentMesh: 0
+--- !u!114 &97271447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97271443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815be8a9151642d4bb7b65d51d39067e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 97271445}
 --- !u!1 &157255301
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +982,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1e-45, z: 2.452e-42, w: 1.05e-43}
+  m_BoundingSphereOverride: {x: 1.45466e-40, y: 3.59e-43, z: 1.5067e-41, w: -5.87783e-39}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1015,8 +1029,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711ad93093f89f2459f88b406c55989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4342341071205538886, guid: c911097eb03428b42846917b81a4003f,
-    type: 3}
+  enemyTypes:
+  - {fileID: 11400000, guid: a7fdc80db94ed2e4d9f7cddd2f84662b, type: 2}
+  - {fileID: 11400000, guid: 6f682e886ef021a43a235c3dc58ef8b6, type: 2}
+  - {fileID: 11400000, guid: e83acf99d9cfc6e4c889aac24687d509, type: 2}
   spawnPoint: {fileID: 1313394135}
   timeBetweenSpawns: 3
   spawnCurve:
