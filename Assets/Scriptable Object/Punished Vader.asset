@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1bbeeef5c013742ace5d1809b0b829, type: 3}
+  m_Name: Punished Vader
+  m_EditorClassIdentifier: 
+  name: PunishedVader
+  prefab: {fileID: 7836561691285808696, guid: 1aa3cca1d2df97a47843fda7012d6b5c, type: 3}
+  cooldown: 1

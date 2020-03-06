@@ -5,6 +5,7 @@ using UnityEngine;
 public class SingleNode : MonoBehaviour
 {
     public SingleNode[] nextNode;
+    protected bool Dead;
 
     public SingleNode GetNextNode()
     {
@@ -12,5 +13,20 @@ public class SingleNode : MonoBehaviour
             return null;
 
         return nextNode[Random.Range(0, nextNode.Length)];
+    }
+
+    public virtual void Explosion()
+    {
+        Debug.Log("Here then");
+    }
+
+    public virtual void Kill()
+    {
+        if (Dead)
+            return;
+
+        GetComponent<MeshRenderer>().enabled = false;
+        Explosion();
+        Dead = true;
     }
 }

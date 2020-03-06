@@ -6,7 +6,8 @@ public class Spawner : MonoBehaviour
 {
     //public Nodes nodeScript;
     public float timeBetweenSpawns;
-    public Transform prefab;
+    //public Transform prefab;
+    public EntityClass[] enemies;
     float timePassed = 0;
 
     private void Start()
@@ -20,7 +21,9 @@ public class Spawner : MonoBehaviour
 
         if (timePassed > timeBetweenSpawns)
         {
-            Transform Foo = Instantiate(prefab, this.transform.position, prefab.rotation);
+            int r = Random.Range(0, enemies.Length);
+
+            Transform Foo = Instantiate(enemies[r].prefab, this.transform.position, enemies[r].prefab.rotation);
             //Foo.GetComponent<CasualStroll>().nodeScript = nodeScript;
             timePassed = 0;
         }

@@ -2,26 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CasualStroll : MonoBehaviour
+public class NotSoCasualStroll : CasualStroll
 {
-    public Nodes nodeScript;
-    public float speed = 1f;
-    protected float currentProgress = 0;
-    protected int currentTarget = 0;
-    protected SingleNode currentNode;
-    protected SingleNode nextNode;
-
-    protected void Start()
-    {
-        nodeScript = Nodes.Instance;
-        currentNode = nodeScript.tuskenRaiders[0];
-        nextNode = currentNode.GetNextNode();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("B");
+        //Debug.Log("A");
+
         //Moving through nodes 
         if (nextNode != null)
         {
@@ -39,7 +27,7 @@ public class CasualStroll : MonoBehaviour
                 nextNode = currentNode.GetNextNode();
                 currentProgress = 0;
 
-                //currentNode.transform.GetComponent<MeshRenderer>().enabled = false;
+                currentNode.Kill();
             }
         }
     }

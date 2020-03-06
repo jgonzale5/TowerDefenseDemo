@@ -19,7 +19,7 @@ public class ClockScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        secondsPassed += Time.deltaTime;
+        secondsPassed += Time.fixedDeltaTime;
 
         DisplayTime(secondsPassed);
     }

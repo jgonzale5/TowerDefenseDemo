@@ -41,7 +41,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.054767594, b: 0, a: 1}
   m_Intensity: 0.43
   m_Range: 10
   m_SpotAngle: 30
@@ -103,9 +103,9 @@ GameObject:
   - component: {fileID: 7836561691285808699}
   - component: {fileID: 7836561691285808698}
   - component: {fileID: 7836561691285808701}
-  - component: {fileID: -846259487182861071}
+  - component: {fileID: 6186267808429438161}
   m_Layer: 0
-  m_Name: ThisDude
+  m_Name: ThisDude 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b6d9f99dbb8617445861115510814b46, type: 2}
+  - {fileID: 2100000, guid: 52f8ef88e414c9d4da42b5d9dfc910a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,7 +185,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-846259487182861071
+--- !u!114 &6186267808429438161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,12 +194,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7836561691285808700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c69b9ba9d589bf9418cebe339b7c241d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9886c8c6c424c4a4fab435bac4d0d2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nodeScript: {fileID: 0}
-  speed: 10
-  minDistanceToSwitch: 0.2
+  speed: 1
 --- !u!1 &7836561692706067660
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +258,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e43cd5f9a49b71a4f99bf2fe947bef35, type: 2}
+  - {fileID: 2100000, guid: f17bb876e0e987744aebe33880cebbf4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
